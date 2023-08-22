@@ -8,7 +8,7 @@ body, .header-curso {
 }
 
 .swift-section {
-    background-image: url('../static/images/pexels-adrien-olichon-2387793.jpg');
+    background-image: url('/static/images/pexels-adrien-olichon-2387793.jpg');
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
@@ -16,7 +16,7 @@ body, .header-curso {
 
 .apple {
 
-    background-image: url('../static/images/pexels-turek-8681022.jpg');
+    background-image: url('/static/images/pexels-turek-8681022.jpg');
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
