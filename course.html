@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link href="./static/output.css" rel="stylesheet" />
+        <link href="./static/dist/xcode.css" rel="stylesheet" />
+        <link href="./static/dist/flowbite.min.css" rel="stylesheet" />
+        <script src="./static/dist/flowbite.min.js"></script>
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.8.0/highlight.min.js"></script>
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.8.0/styles/gradient-light.min.css"></script>
+
+        <!-- and it's easy to individually load additional languages -->
+        <script src="https://unpkg.com/@highlightjs/cdn-assets@11.8.0/languages/swift.min.js"></script>
+        <!-- <script src="./static/dist/core.js"></script> -->
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;700&family=Roboto&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        if (
+            localStorage.getItem('color-theme') === 'dark' ||
+            (!('color-theme' in localStorage) &&
+                window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+
+<body>
+        <header>
+            <nav
+                class="bg-white px-4 lg:px-6 py-2.5 dark:bg-gray-800 header-curso border-b-2 rounded-b-lg border-primary-700"
+            >
+                <div
+                    class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl"
+                >
+                    <a href="/" class="flex items-center">
+                        <span
+                            class="self-center text-xl font-semibold whitespace-nowrap dark:text-primary-400 font-eczar"
+                            >Curso de Swift</span
+                        >
+                        <svg
+                            class="pl-2 w-6 h-6"
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="1em"
+                            viewBox="0 0 448 512"
+                        >
+                            <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <style>
+                                svg {
+                                    fill: #ffffff;
+                                }
+                            </style>
+                            <path
+                                d="M448 156.09c0-4.51-.08-9-.2-13.52a196.31 196.31 0 0 0-2.58-29.42 99.62 99.62 0 0 0-9.22-28A94.08 94.08 0 0 0 394.84 44a99.17 99.17 0 0 0-28-9.22 195 195 0 0 0-29.43-2.59c-4.51-.12-9-.17-13.52-.2H124.14c-4.51 0-9 .08-13.52.2-2.45.07-4.91.15-7.37.27a171.68 171.68 0 0 0-22.06 2.32 103.06 103.06 0 0 0-21.21 6.1q-3.46 1.45-6.81 3.12a94.66 94.66 0 0 0-18.39 12.32c-1.88 1.61-3.69 3.28-5.43 5A93.86 93.86 0 0 0 12 85.17a99.45 99.45 0 0 0-9.22 28 196.31 196.31 0 0 0-2.54 29.4c-.13 4.51-.18 9-.21 13.52v199.83c0 4.51.08 9 .21 13.51a196.08 196.08 0 0 0 2.58 29.42 99.3 99.3 0 0 0 9.22 28A94.31 94.31 0 0 0 53.17 468a99.47 99.47 0 0 0 28 9.21 195 195 0 0 0 29.43 2.59c4.5.12 9 .17 13.52.2H323.91c4.51 0 9-.08 13.52-.2a196.59 196.59 0 0 0 29.44-2.59 99.57 99.57 0 0 0 28-9.21A94.22 94.22 0 0 0 436 426.84a99.3 99.3 0 0 0 9.22-28 194.79 194.79 0 0 0 2.59-29.42c.12-4.5.17-9 .2-13.51V172.14c-.01-5.35-.01-10.7-.01-16.05zm-69.88 241c-20-38.93-57.23-29.27-76.31-19.47-1.72 1-3.48 2-5.25 3l-.42.25c-39.5 21-92.53 22.54-145.85-.38A234.64 234.64 0 0 1 45 290.12a230.63 230.63 0 0 0 39.17 23.37c56.36 26.4 113 24.49 153 0-57-43.85-104.6-101-141.09-147.22a197.09 197.09 0 0 1-18.78-25.9c43.7 40 112.7 90.22 137.48 104.12-52.57-55.49-98.89-123.94-96.72-121.74 82.79 83.42 159.18 130.59 159.18 130.59 2.88 1.58 5 2.85 6.73 4a127.44 127.44 0 0 0 4.16-12.47c13.22-48.33-1.66-103.58-35.31-149.2C329.61 141.75 375 229.34 356.4 303.42c-.44 1.73-.95 3.4-1.44 5.09 38.52 47.4 28.04 98.17 23.13 88.59z"
+                            />
+                        </svg>
+                    </a>
+                    <div class="flex items-center lg:order-2">
+                        <a
+                            href="#"
+                            class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
+                            >Início</a
+                        >
+                        <button
+                            data-collapse-toggle="mobile-menu-2"
+                            type="button"
+                            class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                            aria-controls="mobile-menu-2"
+                            aria-expanded="false"
+                        >
+                            <span class="sr-only">Open main menu</span>
+                            <svg
+                                class="w-6 h-6"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                    clip-rule="evenodd"
+                                ></path>
+                            </svg>
+                            <svg
+                                class="hidden w-6 h-6"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"
+                                ></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="sm:hidden">
+            <label for="tabs" class="sr-only">Select your country</label>
+            <select
+                id="tabs"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            >
+                <option>Profile</option>
+                <option>Canada</option>
+                <option>France</option>
+                <option>Germany</option>
+            </select>
+        </div>
+        <ul
+            class="m-10 hidden text-sm font-medium text-center text-gray-500 divide-x divide-gray-200 rounded-lg shadow sm:flex dark:divide-gray-700 dark:text-gray-400"
+        >
+            <li class="w-full">
+                <a
+                    href="#"
+                    class="inline-block w-full p-4 text-gray-900 bg-gray-100 rounded-l-lg focus:ring-4 focus:ring-blue-300 active focus:outline-none dark:bg-gray-700 dark:text-white"
+                    aria-current="page"
+                    >Módulo I</a
+                >
+            </li>
+            <li class="w-full">
+                <a
+                    href="#"
+                    class="inline-block w-full p-4 bg-white hover:text-gray-700 hover:bg-gray-50 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
+                    >Módulo II</a
+                >
+            </li>
+            <li class="w-full">
+                <a
+                    href="#"
+                    class="inline-block w-full p-4 bg-white rounded-r-lg hover:text-gray-700 hover:bg-gray-50 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
+                    >Módulo III</a
+                >
+            </li>
+        </ul>
+        <div class="mx-2 mb-5 rounded-2xl bg-gray-900 curso-section">
+            <div
+                class="m-3 p-4 rounded-2xl border-2 bg-transparent border-primary-700"
+            >
+                <p class="dark:text-white font-bold">MÓDULO I</p>
+                <h1
+                    class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white"
+                >
+                    Introdução ao Swift
+                </h1>
+                <p class="dark:text-white">
+                    Aprenda os fundamentos do Swift, a linguagem de programação
+                    da Apple, explorando conceitos básicos, estruturas de
+                    controle, funções, coleções e orientação a objetos.
+                    Desenvolva a base para criar aplicativos inovadores no
+                    ecossistema Apple.
+                </p>
+            </div>
+        </div>
+        <div class="bg-transparent curso-section apple max-h-screen m-2">
+            <div
+                class="m-3 p-4 border-t-4 bg-gray-800 rounded-xl border-primary-700 max-h-screen"
+            >
+                <p class="dark:text-white font-bold">MÓDULO I: Instalação</p>
+                <h1
+                    class="max-w-2xl mb-1 text-2xl font-extrabold tracking-tight leading-none md:text-3xl xl:text-4xl dark:text-white mb-3"
+                >
+                    Instalação do Xcode
+                </h1>
+
+                <p class="dark:text-white">
+                    <strong
+                        >Guia de Instalação do Xcode para Iniciantes em
+                        Swift</strong
+                    >
+                </p>
+                <p class="dark:text-white mb-3 text-justify">
+                    O Xcode é o ambiente de desenvolvimento integrado (IDE)
+                    oficial da Apple, essencial para criar aplicativos para seus
+                    dispositivos iOS, macOS, watchOS e tvOS. Se você está
+                    começando a aprender a linguagem de programação Swift e
+                    deseja desenvolver aplicativos para o ecossistema da Apple,
+                    instalar o Xcode é o primeiro passo crucial. Este guia
+                    fornecerá instruções passo a passo sobre como instalar o
+                    Xcode em seu sistema.
+                </p>
+                <p class="dark:text-white mb-2 text-justify">
+                    <strong>Passo 1: Verificar os Requisitos do Sistema</strong>
+                </p>
+                <p class="dark:text-white text-justify">
+                    Antes de instalar o Xcode, certifique-se de que seu sistema
+                    atenda aos requisitos mínimos. O Xcode é compatível apenas
+                    com computadores Mac que executam o macOS.
+                </p>
+                <p class="dark:text-white mt-2 mb-2">
+                    <strong>Passo 2: Acessar a Mac App Store</strong>
+                </p>
+                <p class="dark:text-white">
+                    O Xcode está disponível gratuitamente na Mac App Store. Para
+                    acessá-lo:
+                </p>
+                <ol>
+                    <li class="dark:text-white">
+                        Abra a Mac App Store no seu Mac.
+                    </li>
+                    <li class="dark:text-white">
+                        Use a barra de pesquisa no canto superior direito e
+                        digite "Xcode".
+                    </li>
+                    <li class="dark:text-white">
+                        Clique no resultado da pesquisa que corresponde ao
+                        Xcode.
+                    </li>
+                </ol>
+                <p class="dark:text-white mt-2 mb-2">
+                    <strong>Passo 3: Baixar e Instalar o Xcode</strong>
+                </p>
+                <p class="dark:text-white">
+                    Após acessar a página do Xcode na Mac App Store:
+                </p>
+                <ol>
+                    <li class="dark:text-white">
+                        Clique no botão "Obter" ou "Baixar". Isso iniciará o
+                        download do Xcode.
+                    </li>
+                    <li class="dark:text-white">
+                        Aguarde até que o download seja concluído. Isso pode
+                        levar algum tempo, dependendo da velocidade da sua
+                        conexão com a Internet.
+                    </li>
+                    <li class="dark:text-white">
+                        Após o download, clique no botão "Abrir" que aparecerá.
+                        Isso iniciará o instalador do Xcode.
+                    </li>
+                    <li class="dark:text-white">
+                        Siga as instruções do instalador para concluir o
+                        processo de instalação. Isso envolverá a aceitação de
+                        termos e condições, bem como a seleção do local de
+                        instalação.
+                    </li>
+                </ol>
+                <p class="dark:text-white mt-2 mb-2">
+                    <strong
+                        >Passo 4: Verificação Opcional de Componentes</strong
+                    >
+                </p>
+                <p class="dark:text-white">
+                    Durante a instalação, o Xcode pode pedir que você instale
+                    componentes adicionais, como simulators para testar
+                    aplicativos em diferentes dispositivos iOS e macOS. Você
+                    pode escolher instalá-los agora ou mais tarde, dependendo de
+                    suas necessidades. Lembre-se de que, para desenvolvimento
+                    eficaz, é aconselhável instalar os simulators relevantes.
+                </p>
+                <p class="dark:text-white mt-2 mb-2">
+                    <strong
+                        >Passo 5: Abrir o Xcode e Começar a Programar</strong
+                    >
+                </p>
+                <p class="dark:text-white">Após a instalação bem-sucedida:</p>
+                <ol>
+                    <li class="dark:text-white">
+                        Vá para a pasta "Aplicativos" no seu Mac e clique no
+                        ícone do Xcode.
+                    </li>
+                    <li class="dark:text-white">
+                        O Xcode pode pedir permissões ou atualizações
+                        adicionais; siga as instruções conforme necessário.
+                    </li>
+                    <li class="dark:text-white">
+                        Com o Xcode aberto, você pode começar a criar seus
+                        projetos Swift. Selecione "Create a new Xcode project"
+                        para começar um novo projeto Swift.
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="bg-transparent curso-section apple max-h-screen m-2 mt-5">
+            <div
+                class="m-3 p-4 border-t-4 bg-gray-800 rounded-xl border-primary-700 max-h-screen"
+            >
+                <p class="dark:text-white font-bold">MÓDULO I: Histórico</p>
+                <h1
+                    class="max-w-2xl mb-1 text-2xl font-extrabold tracking-tight leading-none md:text-3xl xl:text-4xl mb-3 dark:text-white"
+                >
+                    A história do Swift
+                </h1>
+                <p class="dark:text-white text-justify">
+                    A linguagem Swift, lançada pela primeira vez pela Apple em
+                    2014, rapidamente se tornou um marco no mundo do
+                    desenvolvimento de software. Projetada para ser moderna,
+                    eficiente e fácil de aprender, Swift foi concebida como uma
+                    alternativa robusta ao Objective-C, visando melhorar a
+                    produtividade dos desenvolvedores. Desde então, a linguagem
+                    tem evoluído constantemente, com atualizações regulares que
+                    trazem novos recursos e aprimoramentos de desempenho. Sua
+                    ascensão meteórica como uma linguagem preferida para o
+                    desenvolvimento iOS, macOS, watchOS e tvOS, é testemunho não
+                    apenas de sua elegância e poder, mas também do compromisso
+                    da comunidade de desenvolvedores em moldar o futuro da
+                    programação moderna.
+                </p>
+            </div>
+        </div>
+        <div class="bg-transparent curso-section apple max-h-screen m-2 mt-5">
+            <div
+                class="m-3 p-4 border-t-4 bg-gray-800 rounded-xl border-primary-700 max-h-screen dark:text-white"
+            >
+                <p class="dark:text-white font-bold">
+                    MÓDULO I: Características/p>
+                </p>
+                <h1
+                    class="max-w-2xl mb-1 text-2xl font-extrabold tracking-tight leading-none md:text-3xl xl:text-4xl mb-3 dark:text-white"
+                >
+                    Características da linguagem
+                </h1>
+                <p class="mb-4 text-justify">
+                    A linguagem Swift se destaca por uma série de
+                    características inovadoras que a tornam uma escolha
+                    privilegiada para o desenvolvimento moderno de aplicativos.
+                </p>
+                <p class="mb-4 text-justify">
+                    Sua sintaxe expressiva e clara permite que os
+                    desenvolvedores escrevam código de forma mais concisa e
+                    legível, aumentando a eficiência do desenvolvimento.
+                </p>
+                <p class="mb-4 text-justify">
+                    Além disso, a segurança é uma prioridade fundamental do
+                    Swift, incorporando recursos como opcionalidade que ajuda a
+                    prevenir erros comuns e aumenta a estabilidade dos
+                    aplicativos.
+                </p>
+                <p class="mb-4 text-justify">
+                    A linguagem também oferece suporte nativo a manipulação de
+                    strings e coleções, facilitando a criação de algoritmos
+                    complexos.
+                </p>
+                <p class="mb-4 text-justify">
+                    Sua abordagem de gerenciamento automático de memória reduz a
+                    probabilidade de vazamentos de memória e simplifica o
+                    processo de desenvolvimento.
+                </p>
+                <p class="mb-4 text-justify">
+                    Além disso, a Swift proporciona um ambiente propício para
+                    desenvolver interfaces de usuário atraentes, aproveitando
+                    bibliotecas gráficas avançadas.
+                </p>
+                <p class="text-justify">
+                    Com uma comunidade ativa, documentação abrangente e evolução
+                    contínua, o Swift promete continuar sendo a escolha
+                    preferida para construir aplicativos inovadores e robustos.
+                </p>
+            </div>
+        </div>
+
+        <div
+            class="m-2 mt-5 p-4 border-t-4 bg-gray-800 rounded-xl border-primary-700 max-h-screen dark:text-white"
+        >
+            <p class="dark:text-white font-bold">
+                MÓDULO I: Estruturas de controle
+            </p>
+            <h1
+                class="max-w-2xl mb-1 text-2xl font-extrabold tracking-tight leading-none md:text-3xl xl:text-4xl mb-3 dark:text-white"
+            >
+                Estruturas de controle da linguagem Swift
+            </h1>
+            <p class="mb-4 text-justify">
+                Em Swift, as estruturas de controle desempenham um papel
+                fundamental no fluxo de execução de um programa. As
+                condicionais, como o <code class="text-blue-500">if</code>,
+                permitem que você tome decisões com base em condições
+                específicas. Por exemplo:
+            </p>
+            <pre>
+                <code class="language-swift bg-gray-100 dark:bg-gray-700 p-4 rounded-lg dark:text-white">
+let idade = 18
+if idade >= 18 {
+    print("Você é maior de idade.")
+} else {
+    print("Você é menor de idade.")
+}
+                </code>
+            </pre>
+            <p class="mb-4 text-justify">
+                As estruturas de repetição, como o
+                <code class="text-blue-500">for</code> e o
+                <code class="text-blue-500">while</code>, permitem que você
+                execute blocos de código várias vezes. Aqui está um exemplo de
+                um loop <code class="text-blue-500">for</code> que itera de 1 a
+                5:
+            </p>
+            <pre class="bg-gray-100 dark:bg-gray-700 rounded-lg">
+                <code class="language-swift bg-gray-100 dark:bg-gray-700 p-4 rounded-lg dark:text-white">
+for numero in 1...5 {
+    print(numero)
+}
+                </code>
+            </pre>
+            <p class="text-justify mt-4">
+                Além disso, Swift oferece estruturas de controle de fluxo, como
+                o <code class="text-blue-500">switch</code>, que permite avaliar
+                múltiplos casos e executar o bloco correspondente ao primeiro
+                caso verdadeiro:
+            </p>
+            <pre class="bg-gray-100 dark:bg-gray-700 rounded-lg mt-4">
+                    <code class="language-swift bg-gray-100 dark:bg-gray-700 p-4 rounded-lg dark:text-white">
+let diaDaSemana = "quarta-feira"
+switch diaDaSemana {
+case "sábado", "domingo":
+    print("Dia de descanso!")
+case "segunda-feira":
+    print("Início da semana.")
+default:
+    print("Dia útil.")
+}
+                    </code>
+                </pre>
+        </div>
+
+        <div
+            class="m-2 mt-5 p-4 border-t-4 bg-gray-800 rounded-xl border-primary-700 max-h-screen dark:text-white"
+        >
+            <p class="dark:text-white font-bold">MÓDULO I: Variáveis</p>
+            <h1
+                class="max-w-2xl mb-1 text-2xl font-extrabold tracking-tight leading-none md:text-3xl xl:text-4xl mb-3 dark:text-white"
+            >
+                Variáveis na linguagem Swift
+            </h1>
+            <div
+                class="text-gray-800 dark:text-white bg-white dark:bg-gray-800 p-2 rounded-lg shadow-md"
+            >
+                <p class="mb-4 text-justify">
+                    Variáveis são elementos fundamentais na programação,
+                    permitindo armazenar e manipular dados de forma dinâmica. Em
+                    Swift, você pode declarar uma variável usando a
+                    palavra-chave
+                    <code class="text-blue-500 language-swift">var</code>.
+                </p>
+                <p class="mb-4 text-justify">
+                    Para declarar uma variável, especifique o nome seguido do
+                    tipo de dado que ela conterá. Por exemplo,
+                    <code class="text-blue-500 language-swift"
+                        >var idade: Int</code
+                    >
+                    declara uma variável chamada "idade" que conterá valores
+                    inteiros.
+                </p>
+                <p class="mb-4 text-justify">
+                    Após declarar uma variável, você pode atribuir um valor a
+                    ela utilizando o operador de atribuição
+                    <code class="text-blue-500 language-swift">=</code>. Por
+                    exemplo,
+                    <code class="text-blue-500 language-swift">idade = 25</code>
+                    atribui o valor 25 à variável "idade".
+                </p>
+                <p class="mb-4 text-justify">
+                    As variáveis podem ser atualizadas com novos valores ao
+                    longo do código. Por exemplo, você pode incrementar o valor
+                    de "idade" usando
+                    <code class="text-blue-500 language-swift">idade += 1</code
+                    >.
+                </p>
+                <p class="text-justify">
+                    Variáveis fornecem flexibilidade para armazenar informações
+                    dinâmicas, tornando a programação mais poderosa e adaptável
+                    a diferentes cenários.
+                </p>
+            </div>
+        </div>
+
+        <div
+            class="m-2 mt-5 p-4 border-t-4 bg-gray-800 rounded-xl border-primary-700 max-h-screen dark:text-white"
+        >
+            <p class="dark:text-white font-bold">MÓDULO I: Operadores</p>
+            <h1
+                class="max-w-2xl mb-1 text-2xl font-extrabold tracking-tight leading-none md:text-3xl xl:text-4xl mb-3 dark:text-white"
+            >
+                Utilizando Operadores
+            </h1>
+            <div
+                class="text-gray-800 dark:text-white bg-white dark:bg-gray-800 p-2 rounded-lg shadow-md"
+            >
+                <p class="mb-4 text-justify">
+                    Operadores desempenham um papel essencial na manipulação e
+                    cálculos de dados em programação. Em Swift, você encontra
+                    uma variedade de operadores que permitem realizar diferentes
+                    tarefas.
+                </p>
+                <p class="mb-4 text-justify">
+                    O operador de adição
+                    <code class="text-blue-500 language-swift">+</code> soma
+                    valores, como em
+                    <code class="text-blue-500 language-swift"
+                        >let soma = 10 + 5</code
+                    >.
+                </p>
+                <p class="mb-4 text-justify">
+                    O operador de subtração
+                    <code class="text-blue-500 language-swift">-</code> subtrai
+                    valores, como em
+                    <code class="text-blue-500 language-swift"
+                        >let diferenca = 20 - 8</code
+                    >.
+                </p>
+                <p class="mb-4 text-justify">
+                    O operador de multiplicação
+                    <code class="text-blue-500 language-swift">*</code>
+                    multiplica valores, como em
+                    <code class="text-blue-500 language-swift"
+                        >let produto = 4 * 3</code
+                    >.
+                </p>
+                <p class="text-justify">
+                    O operador de divisão
+                    <code class="text-blue-500 language-swift">/</code> divide
+                    valores, como em
+                    <code class="text-blue-500 language-swift"
+                        >let quociente = 15 / 3</code
+                    >.
+                </p>
+            </div>
+        </div>
+
+        <div
+            class="m-2 mt-5 p-4 border-t-4 bg-gray-800 rounded-xl border-primary-700 max-h-screen dark:text-white"
+        >
+            <p class="dark:text-white font-bold">MÓDULO I: Tipos de dados</p>
+            <h1
+                class="max-w-2xl mb-1 text-2xl font-extrabold tracking-tight leading-none md:text-3xl xl:text-4xl mb-3 dark:text-white"
+            >
+                Os tipos de dados na linguagem Swift
+            </h1>
+
+            <div
+                class="text-gray-800 dark:text-white bg-white dark:bg-gray-800 p-2 rounded-lg shadow-md"
+            >
+                <p class="mb-4 text-justify">
+                    Tipos de dados são fundamentais para a organização e
+                    manipulação de informações em programação. Em Swift, você
+                    encontra diversos tipos que abrangem números, texto,
+                    coleções e mais.
+                </p>
+                <p class="mb-4 text-justify">
+                    O tipo
+                    <code class="text-blue-500 language-swift">Int</code>
+                    representa números inteiros, como em
+                    <code class="text-blue-500 language-swift"
+                        >let idade: Int = 25</code
+                    >.
+                </p>
+                <p class="mb-4 text-justify">
+                    O tipo
+                    <code class="text-blue-500 language-swift">Double</code> é
+                    usado para números decimais de ponto flutuante, como em
+                    <code class="text-blue-500 language-swift"
+                        >let altura: Double = 1.75</code
+                    >.
+                </p>
+                <p class="mb-4 text-justify">
+                    Para texto, o tipo
+                    <code class="text-blue-500 language-swift">String</code> é
+                    utilizado, como em
+                    <code class="text-blue-500 language-swift"
+                        >let nome: String = "Maria"</code
+                    >.
+                </p>
+                <p class="text-justify">
+                    Coleções, como arrays e dicionários, têm tipos específicos,
+                    como
+                    <code class="text-blue-500 language-swift"
+                        >Array&lt;Int&gt;</code
+                    >
+                    ou
+                    <code class="text-blue-500 language-swift"
+                        >Dictionary&lt;String, Any&gt;</code
+                    >, que definem a estrutura dos dados que podem conter.
+                </p>
+            </div>
+        </div>
+
+
+        <div
+        class="m-2 mt-5 p-4 border-t-4 bg-gray-800 rounded-xl border-primary-700 max-h-screen dark:text-white"
+    >
+        <p class="dark:text-white font-bold">MÓDULO I: Funções</p>
+        <h1
+            class="max-w-2xl mb-1 text-2xl font-extrabold tracking-tight leading-none md:text-3xl xl:text-4xl mb-3 dark:text-white"
+        >
+            Utilizando funções na linguagem Swift
+        </h1>
+        <div class="text-gray-800 dark:text-white bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold mb-4">Funções em Swift</h2>
+            <p class="mb-4 text-justify">
+              Funções são blocos de código que podem ser reutilizados para executar tarefas específicas. Em Swift, você pode definir funções usando a palavra-chave <code class="text-blue-500 language-swift">func</code>.
+            </p>
+            <p class="mb-4 text-justify">
+              Aqui está um exemplo simples de uma função que retorna a soma de dois números inteiros:
+            </p>
+            <pre class="mb-4 bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
+            <code class="language-swift bg-gray-100 dark:bg-gray-700 p-4 rounded-lg dark:text-white">
+func somar(a: Int, b: Int) -> Int {
+    return a + b
+}
+            </code>
+            </pre>
+            <p class="mb-4 text-justify">
+              A função acima recebe dois parâmetros, <code class="text-blue-500 language-swift">a</code> e <code class="text-blue-500 language-swift">b</code>, ambos do tipo <code class="text-blue-500 language-swift">Int</code>, e retorna a soma deles como um valor do tipo <code class="text-blue-500 language-swift">Int</code>.
+            </p>
+            <p class="mb-4 text-justify">
+              As funções também podem não retornar valores, sendo usadas para executar tarefas específicas. Essas funções são definidas com o tipo de retorno <code class="text-blue-500 language-swift">Void</code>:
+            </p>
+            <pre class="mb-4 bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
+                <code class="language-swift bg-gray-100 dark:bg-gray-700 p-4 rounded-lg dark:text-white">
+func saudacao(nome: String) {
+    print("Olá, \(nome)!")
+}
+                </code>
+            </pre>
+            <p class="text-justify">
+              Ao chamar a função <code class="text-blue-500 language-swift">saudacao(nome: "João")</code>, ela imprimirá "Olá, João!" no console.
+            </p>
+        </div>
+
+        <script>
+            hljs.highlightAll();
+        </script>
+</body>
+
+
+</html>
