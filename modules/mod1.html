@@ -166,6 +166,34 @@
                 </p>
             </div>
         </div>
+        <div class="bg-transparent curso-section apple max-h-screen m-2 p-40">
+            <div
+                class="m-3 p-4 border-t-4 bg-gray-800 rounded-xl border-primary-700 max-h-screen"
+            >
+                <p class="dark:text-white font-bold">Vídeo</p>
+                <h1
+                    class="max-w-2xl mb-1 text-2xl font-extrabold tracking-tight leading-none md:text-3xl xl:text-4xl dark:text-white mb-3"
+                >
+                    Vídeo Aula
+                </h1>
+                
+                <div class="w-full h-full bg-gray-800 flex justify-center items-center m-auto align-middle">
+
+                    <div class="loading-container  justify-center m-auto">
+                        <div class="loading-text  text-black dark:text-black">Loading video</div>
+                        <div class="loading-spinner"></div>
+                    </div>
+
+                    <video id="fake-video" class="hidden" controls>
+                        <source src="your_video_file.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <script src="/curso-swift/static/script.js"></script>
+
+            </div>
+        </div>
+
         <div class="bg-transparent curso-section apple max-h-screen m-2">
             <div
                 class="m-3 p-4 border-t-4 bg-gray-800 rounded-xl border-primary-700 max-h-screen"
